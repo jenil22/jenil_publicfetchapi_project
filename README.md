@@ -1,5 +1,3 @@
-# Jenil-PublicFetchAPI-Project
-
 # Flutter Article App
 A Flutter app that fetches and displays a list of articles from a public
 API.
