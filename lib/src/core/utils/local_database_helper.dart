@@ -1,33 +1,33 @@
 import 'package:hive_flutter/hive_flutter.dart';
-import '../../models/post_model.dart';
+import 'package:jenil_publicfetchapi_project/src/features/home/domain/models/post_model.dart';
 
 class LocalDatabaseHelper {
   static const String _boxName = 'posts';
-  static Box<Post>? _postsBox;
+  static Box<PostModel>? _postsBox;
 
   static Future<void> init() async {
     await Hive.initFlutter();
-    Hive.registerAdapter(PostAdapter());
-    _postsBox = await Hive.openBox<Post>(_boxName);
+    Hive.registerAdapter(PostModelAdapter());
+    _postsBox = await Hive.openBox<PostModel>(_boxName);
   }
 
   // Add a new post
-  static Future<void> addPost(Post post) async {
+  static Future<void> addPost(PostModel post) async {
     await _postsBox?.put(post.id, post);
   }
 
   // Update an existing post
-  static Future<void> updatePost(Post post) async {
+  static Future<void> updatePost(PostModel post) async {
     await _postsBox?.put(post.id, post);
   }
 
   // Get a post by id
-  static Post? getPost(int id) {
+  static PostModel? getPost(int id) {
     return _postsBox?.get(id);
   }
 
   // Get all posts
-  static List<Post> getAllPosts() {
+  static List<PostModel> getAllPosts() {
     return _postsBox?.values.toList() ?? [];
   }
 

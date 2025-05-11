@@ -21,13 +21,14 @@ class PostModelAdapter extends TypeAdapter<PostModel> {
       id: fields[1] as int,
       title: fields[2] as String,
       body: fields[3] as String,
+      isFavorite: fields[4] as bool,
     );
   }
 
   @override
   void write(BinaryWriter writer, PostModel obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.userId)
       ..writeByte(1)
@@ -35,7 +36,9 @@ class PostModelAdapter extends TypeAdapter<PostModel> {
       ..writeByte(2)
       ..write(obj.title)
       ..writeByte(3)
-      ..write(obj.body);
+      ..write(obj.body)
+      ..writeByte(4)
+      ..write(obj.isFavorite);
   }
 
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jenil_publicfetchapi_project/src/core/local_database_helper/local_database_helper.dart';
 import 'package:jenil_publicfetchapi_project/src/core/theme/theme.dart';
-import 'package:jenil_publicfetchapi_project/src/features/home/presentation/screens/home_screen.dart';
+import 'package:jenil_publicfetchapi_project/src/features/splash/presentation/screens/splash_screen.dart';
+import 'package:jenil_publicfetchapi_project/src/core/utils/local_database_helper.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Article App',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkThemeMode,
-      home: const HomeScreen(),
+      home: const SplashScreen(),
     );
   }
 }

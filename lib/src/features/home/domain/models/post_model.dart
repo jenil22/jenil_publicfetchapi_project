@@ -16,11 +16,15 @@ class PostModel {
   @HiveField(3)
   final String body;
 
+  @HiveField(4)
+  bool isFavorite;
+
   PostModel({
     required this.userId,
     required this.id,
     required this.title,
     required this.body,
+    this.isFavorite = false,
   });
 
   factory PostModel.fromJson(Map<String, dynamic> json) {
@@ -33,6 +37,12 @@ class PostModel {
   }
 
   Map<String, dynamic> toJson() {
-    return {'userId': userId, 'id': id, 'title': title, 'body': body};
+    return {
+      'userId': userId,
+      'id': id,
+      'title': title,
+      'body': body,
+      'isFavorite': isFavorite,
+    };
   }
 }
