@@ -16,9 +16,7 @@ flutter pub get
 flutter run
 ## Tech Stack
 - Flutter SDK: 3.29.3
-- State Management: 
- - Cubit
- - Clean Architecture
+- State Management: Cubit, Clean Architecture
 - HTTP Client: http
 - Persistence: hive
 
