@@ -15,7 +15,16 @@ flutter pub get
 3. Run the app:
 flutter run
 ## Tech Stack
-- Flutter SDK: [Version]
-- State Management: [Provider/Riverpod/etc.]
-- HTTP Client: [http/dio]
-- Persistence: [shared_preferences/hive]
+- Flutter SDK: 3.29.3
+- State Management: 
+ - Cubit
+ - Clean Architecture
+- HTTP Client: http
+- Persistence: hive
+
+## State Management Explanation
+In this project, i have used cubit state mangement with clean architecture. And create differenet state for loading, loaded and error. 
+Also Hanlde the client filter logic from state mangement itself.
+
+## Known Issues / Limitations
+- Can add Fav Button from Post Details Page.
